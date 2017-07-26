@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.ads.beans.User" schema="test" table="Users">
+<!--    <id name="userId" type="java.lang.Integer">
+      <column length="30" name="id"/>
+      <generator class="assigned"/>
+    </id>-->
+    <id name="userId" type="java.lang.String">
+      <column length="50" name="USER_ID" unique="true"/>
+    </id>
+    <property name="password" type="java.lang.String">
+      <column length="50" name="USER_PASSWORD"/>
+    </property>
+    <property name="fullName" type="java.lang.String">
+      <column length="50" name="USER_FULL_NAME"/>
+    </property>
+    <property name="emailAddr" type="java.lang.String">
+      <column length="50" name="USER_EMAIL_ADDR"/>
+    </property>
+    <property name="mobile" type="java.lang.String">
+      <column length="50" name="USER_MOBILE"/>
+    </property>
+  </class>
+  <query name="getAllUsers">
+        from com.ads.beans.User
+    </query>
+  <query name="getUser">
+        from com.ads.beans.User logn where logn.userId = :id
+    </query>
+  <query name="deleteUser">
+        delete com.ads.beans.User logn where logn.userId = :id
+    </query>
+</hibernate-mapping>
