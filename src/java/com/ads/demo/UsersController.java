@@ -5,7 +5,6 @@
  */
 package com.ads.demo;
 
-import com.ads.beans.Employee;
 import com.ads.beans.User;
 import com.ads.interfaces.UserService;
 import com.ads.interfaces.impl.UserServiceImpl;
@@ -47,9 +46,9 @@ public class UsersController {
         this.userService = userService;
     }
     
-    @Autowired(required = true)
-//    @Qualifier("employee")
-    public Employee employee;
+//    @Autowired(required = true)
+////    @Qualifier("employee")
+//    public Employee employee;
     
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
@@ -100,7 +99,7 @@ public class UsersController {
 
     @RequestMapping("users")
     public ModelAndView usersList() {
-        logger.info("--------------------name:"+this.employee.getName());
+//        logger.info("--------------------name:"+this.employee.getName());
         return new ModelAndView("viewUsers", "users", userService.getAllUsers());
     }
 
