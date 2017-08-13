@@ -5,9 +5,6 @@
  */
 package com.ads.beans;
 
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-
 /**
  *
  * @author Rahul
